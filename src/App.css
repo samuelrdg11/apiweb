@@ -30,26 +30,40 @@
 
 body{
   background: url('img/background.jpg') no-repeat center center/cover;
-  height: 9500px;
+  height: auto;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
-#titulo {
-  font-family: 'Courier New';
-}
+
 
 ul{
   display: grid;
-  grid-template-columns: repeat(4, 25%);
-  width: 100%;
-  height: auto;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1vw;
 }
 
-
+.info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  height: auto;
+  background: rgb(20, 58, 31);
+  
+}
 
 .img{
   width: 250px;
   height: 300px;
   margin: 20px 0 20px 0;
+}
+
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
 }

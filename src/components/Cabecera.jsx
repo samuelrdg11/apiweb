@@ -5,7 +5,7 @@ const Cabecera = () => {
         <div>
             <center>
                 <h4 id='titulo'>Breaking Bad Api</h4>
-                <p id='nombre'><i>Samuel Rodriguez</i></p>
+                <p id='nombre'><i>Actividad Web II - Samuel Rodriguez</i></p>
                 
             </center>
            

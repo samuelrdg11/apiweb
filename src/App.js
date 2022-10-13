@@ -1,17 +1,16 @@
 import React from 'react'
 import Cabecera from './components/Cabecera'
-import Peticion from './components/Peticion'
 import './App.css'
 import { useEffect} from 'react'
+import Paginacion from './components/Paginacion'
+import BreakingList from './components/BreakingList'
 
 const App = () => {
  
-  
-  useEffect(() => {
-    obtenerPersonajes();
-}, [])
 
 const [personajes, setPersonajes] = React.useState([])
+const [paginaActual, setPaginaActual] = React.useState(1);
+const [publiPorPagina] = React.useState(8);
 
 const obtenerPersonajes = async() => {
   try{
@@ -22,12 +21,23 @@ const obtenerPersonajes = async() => {
       console.log(error)
   }
 }
+
+useEffect(() => {
+  obtenerPersonajes();
+}, [])
+
+
+const indiceUltimoPost = paginaActual * publiPorPagina;
+const indicePrimerPost = indiceUltimoPost - publiPorPagina;
+const publiActual = personajes.slice(indicePrimerPost, indiceUltimoPost)
+const paginar = numeroPaginas => setPaginaActual(numeroPaginas);
+
   return (
     <div>
       <Cabecera/>
-      <ul>
-      {personajes.map(noun => <Peticion key={noun.char_id} {...noun} />)}
-            </ul>
+      <BreakingList personajes={publiActual}/>
+      <Paginacion  postsPorPagina={publiPorPagina} totalPosts={personajes.length} paginar={paginar} />
+      
     </div>
   )
 }
