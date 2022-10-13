@@ -11,7 +11,6 @@ const Peticion = ({ img, name, nickname, birthday }) => {
                 <p>Nickname: {nickname}</p>
                 <p>Birthday: {birthday}</p>
                 </center>
-               
             
         </div>
 
