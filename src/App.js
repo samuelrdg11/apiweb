@@ -26,8 +26,7 @@ const obtenerPersonajes = async() => {
     <div>
       <Cabecera/>
       <ul>
-                {
-                    personajes.map(noun => <Peticion key={noun.char_id} {...noun} />)
+                {personajes.map(noun => <Peticion key={noun.char_id} {...noun} />)
                 }
             </ul>
     </div>
